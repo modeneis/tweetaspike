@@ -100,8 +100,7 @@ tweetabaseApp
         clearInterval(statInterval);
       }
 
-      if (next.authenticate && !auth.isLoggedIn()) {
-        // console.log('gonna log you out!');
+      if (next.authenticate === true && !auth.isLoggedIn()) {
         $location.path('/login');
       }
     });

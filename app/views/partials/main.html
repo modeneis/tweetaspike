@@ -4,7 +4,7 @@
 
   <div>
     <!-- Tweet input -->
-    <form role="form" ng-submit="addTweet()">
+    <form role="form" ng-submit="createTweet()">
       <div class="row">
         <div class="input-group">
           <input type="text" ng-model="myTweet" placeholder="What would you like to tweetaspike?" class="form-control">
@@ -27,7 +27,7 @@
       <input type="text" ng-model="myTweet.tweet" class="form-control" disabled=disabled>
       <span class="text-muted">{{myTweet.ts | amCalendar}}</span>
       <span class="input-group-btn">
-        <button class="btn btn-danger" ng-click="removeTweet($index)" aria-label="Remove">X</button>
+        <button class="btn btn-danger" ng-click="deleteTweet($index)" aria-label="Remove">X</button>
       </span>
     </p>
     <h4 class="text-muted text-center" ng-show="!myTweets.length">A Tweetaspike is similar to a tweet -- only better because there is no limit on number of characters!:)</h4>

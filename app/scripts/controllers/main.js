@@ -19,8 +19,6 @@ angular.module('tweetabaseApp')
       });
 		};
 
-		$scope.retrieveTweets();
-
 		$scope.retrieveFollowing = function	() {
 			$scope.myFollowingList = [];
 			following.retrieveFollowing({
@@ -33,31 +31,33 @@ angular.module('tweetabaseApp')
 			});
 		};
 
-		$scope.retrieveFollowing();
+		if (uid != null)	{
+			$scope.retrieveTweets();
+			$scope.retrieveFollowing();
+		}
 
-		$scope.addTweet = function () {
+		$scope.createTweet = function () {
 			$scope.errors = '';
-
       if ($scope.myTweet === undefined || $scope.myTweet.trim().length === 0)  {
 				$scope.errors = 'Please enter what would you like to tweetaspike';
         return;
       }
-
-			var tweetObject = {tweet: $scope.myTweet, ts: new Date()};
+			var tweetObject = {key: uid+':'+($scope.myTweets.length+1),tweet: $scope.myTweet, ts: (new Date).getTime()};
 			$scope.myTweets.unshift(tweetObject);
-			$scope.myTweet = '';
-      $http.post('/api/updateTweets', {uid: uid, tweets: $scope.myTweets}).success(function(response) {
+      $http.post('/api/createTweet', {uid: uid, tweet: $scope.myTweet}).success(function(response) {
         // console.log('/api/updateTweets response: ' + JSON.stringify(response));
+				$scope.myTweet = '';
       });
       //this delegates to the Socket.IO client API emit method and sends the post
       //see server.js for the listener
       socket.emit('tweet',{uid: uid, tweet: tweetObject.tweet, realTweet: true});
 		};
 
-		$scope.removeTweet = function (index) {
+		$scope.deleteTweet = function (index) {
+			var tweetKey = $scope.myTweets[index].key;
 			$scope.myTweets.splice(index,1);
-      $http.post('/api/updateTweets', {uid: uid, tweets: $scope.myTweets}).success(function(response) {
-        // console.log('/api/updateTweets response: ' + JSON.stringify(response));
+      $http.post('/api/deleteTweet', {uid: uid, tweetKey: tweetKey}).success(function(response) {
+        // console.log('/api/deleteTweet response: ' + JSON.stringify(response));
       });
 		};
 

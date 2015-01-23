@@ -45,7 +45,7 @@ angular.module('tweetabaseApp')
       localStorageService.set(uidKey,null);
       localStorageService.set(authKey,null);
       $rootScope.currentUser = null;
-      return cb();
+      return cb("Logged out");
     };
 
     var isLoggedIn = function() {

@@ -23,7 +23,7 @@ angular.module('tweetabaseApp')
     $scope.uid = localStorageService.get('uid');
     
     $scope.logout = function() {
-      auth.logout(function()	{
+      auth.logout(function(response)	{
 				// console.log(response);
         $location.path('/login');
       });
