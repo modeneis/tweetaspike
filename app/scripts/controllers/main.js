@@ -8,6 +8,7 @@ angular.module('tweetabaseApp')
 		$scope.myFollowingList = [];
 		$scope.myTweets = [];
 		$scope.alertStatus = false;
+		$scope.autoTweet = false;
 
 		$scope.retrieveTweets = function	() {
       $http.post('/api/retrieveTweets', {uid: uid}).success(function(response) {
@@ -88,6 +89,9 @@ angular.module('tweetabaseApp')
 
 		// auto-tweet from one of the users you are following
 		$scope.init = function() {
+
+			if (!$scope.autoTweet) {return;}
+
 			tweetInterval = setInterval(function()	{
 				console.log('hello');
 				// console.log($scope.myFollowingList);
