@@ -12,24 +12,17 @@ angular.module('tweetabaseApp')
       // console.log(user.email + '...' + user.password);
       $rootScope.currentUser = null;
 
-      $http.post('/api/checkUsername', {username: user.email}).success(function(uResponse) {
-        // console.log('/api/checkUsername uResponse: ' + JSON.stringify(uResponse));
+      $http.post('/api/checkCredentials', {uid: user.email, password: user.password}).success(function(uResponse) {
+        // console.log('/api/checkCredentials uResponse: ' + JSON.stringify(uResponse));
         if (uResponse.status === 'Ok'){
-          user.uid = uResponse.uid;
+          localStorageService.set(uidKey,uResponse.uid);
+          localStorageService.set(authKey,uResponse.auth);
           var authKey = 'auth';
           var uidKey = 'uid';
-          $http.post('/api/checkPassword', {uid: uResponse.uid, password: user.password}).success(function(pResponse) {
-            // console.log('/api/checkPassword pResponse: ' + JSON.stringify(pResponse));
-            if (pResponse.status === 'Ok'){
-              localStorageService.set(uidKey,uResponse.uid);
-              localStorageService.set(authKey,pResponse.auth);
-              user.auth = pResponse.auth;
-              $rootScope.currentUser = user;
-              return cb({status : 'Ok'});
-            } else {
-              return cb();
-            }
-          });
+          user.uid = uResponse.uid;
+          user.auth = uResponse.auth;
+          $rootScope.currentUser = user;
+          return cb({status : 'Ok'});
         } else {
           return cb();
         }
@@ -57,27 +50,10 @@ angular.module('tweetabaseApp')
       return true;
     };
 
-    var signInUsingTwitter = function(callback)  {
-      // var cb = callback || angular.noop;
-      // var consumerKey = 'ftnKzORzC5iHFFX7cMnQhGYYx';
-      // var consumerSecret = 's1AaZpzAEAOrJ8PU774y1fpHwd2Thf3YQ7Ij8Ujnb91I9G7dNR';
-      // var credentials = Base64.encode(consumerKey + ':' + consumerSecret);
-      // var authorization = 'OAuth oauth_callback="http%3A%2F%2Fwww.tweetaspike.com%2Fhome%2F",oauth_consumer_key="ftnKzORzC5iHFFX7cMnQhGYYx",oauth_nonce="s1AaZpzAEAOrJ8PU774y1fpHwd2Thf3YQ7Ij8Ujnb91I9G7dNR",oauth_signature="F1Li3tvehgcraF8DMJ7OyxO4w9Y%3D",oauth_signature_method="HMAC-SHA1",oauth_timestamp="1318467427",oauth_version="1.0"';
-
-      // $http.post('https://api.twitter.com/oauth/request_token', {headers: {'Authorization': authorization, 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}}).success(function(response) {
-      //   console.log('/api/signInUsingTwitter response: ' + JSON.stringify(response));
-      //   if (response.status === 'Ok'){
-      //   } else {
-      //     return cb();
-      //   }
-      // });
-    };
-
     return {
       login: login,
       logout: logout,
-      isLoggedIn: isLoggedIn,
-      signInUsingTwitter: signInUsingTwitter
+      isLoggedIn: isLoggedIn
     };
 
   }]);
