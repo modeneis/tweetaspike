@@ -82,7 +82,7 @@ function seedUsersTweets()  {
     tweets = Math.floor((Math.random() * 10) + 1);
     console.error('usr'+uid+' === '+tweets);
     for (var j = 1; j <= tweets; j++) {
-      var tweetKey = aerospike.key(aerospikeDBParams.dbName,aerospikeDBParams.tweetsTable,'usr'+uid+':'+j);
+      var tweetKey = aerospike.key(aerospikeDBParams.dbName,aerospikeDBParams.tweetsTable,uid+':'+j);
       // update tweet count
       updateTweetCount(uid);
       client.put(tweetKey, {username: 'usr'+uid, tweet: randomTweets[Math.floor((Math.random() * 10) + 1)], ts: randomDate(new Date(2014, 0, 1), new Date())}, function(err, rec, meta) {
@@ -124,7 +124,7 @@ function getBatchUsersPosts()  {
   var tweets;
 
   for (var i = start; i <= end; i++) {
-    keys.unshift(aerospike.key(aerospikeDBParams.dbName,aerospikeDBParams.tweetsTable,'uid:usr'+i+':tweets'));
+    keys.unshift(aerospike.key(aerospikeDBParams.dbName,aerospikeDBParams.tweetsTable,'usr'+i));
   }
 
   console.log(keys);
@@ -155,7 +155,7 @@ function getUsersPosts()  {
   for (var i = start; i <= end; i++) {
     uid = Math.floor((Math.random() * 100000) + 1);
 
-    key = aerospike.key(aerospikeDBParams.dbName,aerospikeDBParams.tweetsTable,'uid:usr'+uid+':tweets');
+    key = aerospike.key(aerospikeDBParams.dbName,aerospikeDBParams.tweetsTable,uid);
 
     console.log("user # " + i + " of " + end + " ===== reading tweets for usr" + uid);
 
