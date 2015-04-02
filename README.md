@@ -55,11 +55,11 @@ If you see *Connection to Aerospike cluster failed!*, please make sure your inst
 
 If all is well, open web browser and point it to: [http://localhost:9000](http://localhost:9000)
 
-### Additional Information
+## Additional Information
 
-#### Data Models
+### Data Models
 
-##### Users
+#### Users
 
 Key: uid
 
@@ -80,7 +80,7 @@ Sample Record:
 
 Note: For simplicity, password is stored in plain-text
 
-##### Tweets
+#### Tweets
 
 Key: uid:tweetcount (Note: Key for Tweet record includes tweet counter so you use Aerospike's key-value technique Batch operation to retrieve all tweets for a given user) 
 
@@ -99,7 +99,7 @@ Sample Record:
   ts: 1427945664001 }
 ```
 
-##### Followers
+#### Followers
 
 Key: uid
 
@@ -117,7 +117,7 @@ Sample Record:
      'peter'] }
 ```
 
-##### Following
+#### Following
 
 Key: uid
 
@@ -140,15 +140,15 @@ Sample Record:
 
 Note: The empty tweets array gets populated on-demand in the client when user clicks / wants to see the tweets for a given user.
 
-#### Application Flow
+### Application Flow
 
-##### Register
+#### Register
 
 * Enforces unique usernames
 * Requires username and password
 * Creates User record
 
-##### Login
+#### Login
 *    Check if User record with *username* key exists
     * If it does not exist, username entered is invalid 
     * If it exists, check if entered *password* matches the User record
@@ -159,35 +159,35 @@ Note: The empty tweets array gets populated on-demand in the client when user cl
           * This value is cleared when user Logs out
           * Log user in 
 
-##### New Tweet/Post
+#### New Tweet/Post
 *    Increments tweet count by 1 in the User record
 *    Adds new Tweet record with key *\<uid\>:\<tweetCount\>*
 
-##### Follow
+#### Follow
 *    Adds new object (tweets/posts array and handle of user-to-follow) to array of objects stored and accessed via *uid* key for the current user
 *    Retrieves followers (array accessed via *uid* key) of user-to-follow user and adds current user as a follower 
 
-##### Unfollow
+#### Unfollow
 *    Removes object (tweets/posts array and handle of user-to-unfollow) from array of objects stored and accessed via *uid* key for the current user
 *    Retrieves followers (array accessed via *uid* key) of user-to-unfollow user and removes current user as a follower 
 
-##### Following
+#### Following
 *    Shows a list of users that current user is following
 *    On initial load, only the list of `following` users is retrieved using *uid* key
 *    The tweets/posts of `following` users are retrieved on-demand when user clicks on their row
 
-##### Followers
+#### Followers
 *    Shows a list of users that are following current user
 *    On initial load, only the list of `followers` users is retrieved using *uid* key
 *    The tweets/posts of `followers` users are retrieved on-demand when user clicks on their row
 
-##### Real-time Alerts
+#### Real-time Alerts
 *    The technology used in this app to deliver real-time alerts is **Socket.io**
 *    The app is setup to listen for `tweet` event -- which is triggered when a new tweet/post gets added by a user. The object sent as a message to Socket.io client emit API looks like `{uid: uid, tweet: tweetText}`
 *    Upon receiving a `tweet` event it then gets emitted out (in our case as a `broadcast` event) to the connected clients along with data object `{uid: uid, tweet: tweetText}` it received
 *    Individual clients are setup to listen on `socket:broadcast` event emitted as described above -- here the listener loops through users that the current user is following and if one of the users’ uid matches that of the data object it received `{uid: uid, tweet: tweetText}`, an alert is displayed
 
-##### Logout
+#### Logout
 *    Clears out auth stored in HTML5 Web/Local Storage and routes the user back to Login
 
 
