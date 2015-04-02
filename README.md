@@ -1,11 +1,11 @@
 Tweetaspike
 ===========
 
-This application is built using -- Aerospike + Express + Angular + Node -- ASEAN (/a-shawn/) Stack.
-
 The purpose of this sample application is to show that Aerospike APIs on top of a key-value store are an effective way to write applications with Aerospike as the only database. To demonstrate, this sample app describes the design and implementation of a twitter-like application. 
 
 The code is easy to follow and substantial enough to be a foundation in learning how to leverage Aerospike's technology and it can also be used as a "seed" application that you can expand.
+
+This application is built using -- Aerospike + Express + Angular + Node -- ASEAN (/a-shawn/) Stack.
 
 ## Application Features
 
@@ -82,9 +82,9 @@ Note: For simplicity, password is stored in plain-text
 
 ##### Tweets
 
-Key: uid
+Key: uid:tweetcount (Note: Key for Tweet record includes tweet counter so you use Aerospike's key-value technique Batch operation to retrieve all tweets for a given user) 
 
-Bin:
+Bins:
 *   key - String
 *   username - String
 *   tweet - String
@@ -92,7 +92,7 @@ Bin:
 
 Sample Record:
 ```
-{ ns: 'test', set: 'tweets', key: 'uid:dash:tweets' } 
+{ ns: 'test', set: 'tweets', key: 'dash:0' } 
 { key: 'dash:0',
   username: 'dash',
   tweet: 'Put.a.Bird.On.It',
