@@ -8,7 +8,7 @@ if (f === undefined) {
   return;
 }
 
-var asConfig = require('./lib/controllers/aerospike_config');
+var asConfig = require('../lib/controllers/aerospike_config');
 var aerospikeConfig = asConfig.aerospikeConfig();
 var aerospikeDBParams = asConfig.aerospikeDBParams();
 var aerospike = require('aerospike');
@@ -201,26 +201,26 @@ function getUsers()  {
 }
 
 function scanAllTweets() {
-  var query = client.query(aerospikeDBParams.dbName,aerospikeDBParams.tweetsTable);
+  var options = { nobins: false, concurrent: true, select: ['username', 'tweetCount']};
+  var query = client.query('test', 'users', options);
   var stream = query.execute();
   var tweetCount = 0;
   stream.on('data', function(record)  {
     // console.log(record);
-    console.log(record.bins.username + " has tweeted " + record.bins.tweet);
-    tweetCount++;
+    console.log(record.bins.username + " has tweeted " + record.bins.tweetCount + " times");
+    tweetCount = tweetCount + record.bins.tweetCount;
   });
   stream.on('error', function(err)  {
     console.log('Error: ',err);
   });
   stream.on('end', function()  {
-    console.log('tweetCount: ', tweetCount);
-    console.log('scanAllTweets: ', '!done!');
+    console.log('scanAllTweets: ', tweetCount);
   });  
 }
 
 function scanAllTweetsWithUDF() {
   //register UDF
-  client.udfRegister('updatePassword.lua', function(err) {
+  client.udfRegister('udf/updatePassword.lua', function(err) {
     if ( err.code === aerospike.status.AEROSPIKE_OK ) {
       // udf registered  
       var statement = {concurrent: true, UDF: {module:'updatePassword', funcname: 'update', args: ['pwd']}};
@@ -307,7 +307,7 @@ function getUsersByTweetCount(min,max)  {
 
 function aggregateTweetsByRegion(min,max)  {
   //register UDF
-  client.udfRegister('aggregateTweets.lua', function(err) {
+  client.udfRegister('udf/aggregateTweets.lua', function(err) {
     if ( err.code === aerospike.status.AEROSPIKE_OK ) {
       // udf registered  
       // console.error('aggregateTweets registeration complete!');

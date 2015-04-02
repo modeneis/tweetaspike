@@ -1,7 +1,7 @@
 var args = require('yargs').argv;;
 // console.log(args);
 
-var asConfig = require('./lib/controllers/aerospike_config');
+var asConfig = require('../lib/controllers/aerospike_config');
 var aerospikeConfig = asConfig.aerospikeConfig();
 var aerospikeDBParams = asConfig.aerospikeDBParams();
 var aerospike = require('aerospike');
@@ -57,50 +57,15 @@ function tweet()	{
 	var uid;
 	var tKey;
 	var randomTweet;
-	var tweets = [];
-
-	// var int = setInterval(function()	{
-	// 	console.log('hello');
-	// }, 5000);
+	var tweet;
 
 	var t = new timer(1, function()	{
 		// console.log('hello');
-		uid = 'usr' + Math.floor((Math.random() * 100000) + 1);
+		uid = 'usr' + Math.floor((Math.random() * 10000) + 1);
 		randomTweet = randomTweets[Math.floor((Math.random() * (totalTweets - 1)) + 0)];
 
-    //add new tweet
-    tweets = [];
-    tKey = aerospike.key(aerospikeDBParams.dbName,aerospikeDBParams.tweetsTable,'uid:'+uid+':tweets');
-
-    //1) retrieve existing tweets for the user, if any
-    client.get(tKey, function(err, rec, meta) {
-      // Check for errors
-      // console.log(rec);
-      if ( err.code === aerospike.status.AEROSPIKE_OK ) {
-        // user has tweets
-        tweets = rec.tweets;
-      }
-      else {
-        // user does not have any tweets                  
-        // console.log(uid + ' does not have any tweets\n');                  
-      }
-      tweets.unshift({tweet: randomTweet, ts: new Date().toString()});
-      // console.log(tweets);
-
-      // add tweets to the database
-      client.put(tKey, {tweets: tweets}, function(err, rec, meta) {
-        // Check for errors
-        // console.log(rec);
-        if ( err.code === aerospike.status.AEROSPIKE_OK ) {
-          // tweets added successfully
-          // console.log(uid + ' just tweetaspiked : ' + randomTweet);
-        }
-        else {
-          // An error occurred
-          // console.log(uid + ' could not tweetaspiked : ' + randomTweet);
-        }
-      });
-    });
+    //TODO: add new tweet
+    
 	});
 }
 
