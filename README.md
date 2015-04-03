@@ -34,9 +34,9 @@ This application is built using -- Aerospike + Express + Angular + Node -- ASEAN
 ### Compatibility
 
 - Node.js:
-    * Versions: v0.10.2 thru v0.10.36 (*IMP*: Aerospike Node.js Client currently does not support versions v0.11.x and greater)
+    * Versions: v0.10.2 thru v0.10.36 (**IMP**: Aerospike Node.js Client currently does not support versions v0.11.x and greater)
 - OS:
-    * CentOS/RHEL 6.x, Debian 6+, Ubuntu 12.04, Ubuntu 14.04, Mac OS X (*IMP*: Aerospike Node.js Client currently does not have support for Windows)
+    * CentOS/RHEL 6.x, Debian 6+, Ubuntu 12.04, Ubuntu 14.04, Mac OS X (**IMP**: Aerospike Node.js Client currently does not have support for Windows)
 - Mac OS X:
     * 10.8 or greater
     * Xcode 5 or greater
