@@ -96,7 +96,7 @@ Note: For simplicity, password is stored in plain-text
 
 #### Tweets
 
-Key: uid:tweetcount (Note: Key for Tweet record includes tweet counter so you use Aerospike's key-value technique Batch operation to retrieve all tweets for a given user) 
+Key: uid:tweetcount 
 
 Bins:
 *   key - String
@@ -112,6 +112,8 @@ Sample Record:
   tweet: 'Put.a.Bird.On.It',
   ts: 1427945664001 }
 ```
+
+Note: Key for Tweet record includes tweet counter so you use Aerospike's key-value technique Batch operation to retrieve all tweets for a given user. 
 
 #### Followers
 
