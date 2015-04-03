@@ -113,7 +113,7 @@ Sample Record:
   ts: 1427945664001 }
 ```
 
-Note: Key for Tweet record includes tweet counter so you use Aerospike's key-value technique Batch operation to retrieve all tweets for a given user. 
+Note: Key for Tweet record includes tweet counter so you can use Aerospike's Batch operation to retrieve all tweets for a given user. 
 
 #### Followers
 
