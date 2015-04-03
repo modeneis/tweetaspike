@@ -31,10 +31,22 @@ This application is built using -- Aerospike + Express + Angular + Node -- ASEAN
 
 ## Get Up and Running
 
+### Compatibility
+● Node.js:
+○ Versions: v0.10.2 thru v0.10.36
+○  IMP: Aerospike Node.js Client currently does not support versions v0.11.x and greater
+● OS:
+○ CentOS/RHEL 6.x, Debian 6+, Ubuntu 12.04, Ubuntu 14.04, Mac OS X
+○ IMP: Aerospike Node.js Client currently does not have support for Windows
+● Mac OS X:
+○ 10.8 or greater
+○  Xcode 5 or greater
+○ Xcode Dev Tools
+
 ### Prerequisites
 
 - Aerospike Server – To install the latest version, [click here](http://www.aerospike.com/download/server/latest). The server should be running and accessible from this app.
-- Node.js – To install a compatible version between v0.10.2 and v0.10.36, visit http://nodejs.org/dist/ (IMP: Aerospike Node.js Client currently does not support Node.js versions v0.11.x and greater)
+- Node.js – To install a compatible version between v0.10.2 and v0.10.36, visit http://nodejs.org/dist/ 
 
 Note: To easily manage your existing Node.js installations and switch between  versions, use version manager such as nvm. To install nvm, visit https://www.npmjs.com/package/nvm. Once installed, you may use it to install different versions of Node.js using command nvm install <version> or switch to a different version that you already have installed using command nvm use <version>
 
