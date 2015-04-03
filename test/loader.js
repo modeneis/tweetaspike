@@ -72,7 +72,19 @@ function seedUsersTweets()  {
   var end = Math.floor((Math.random() * 5000) + 1);
   var tweets = 0;
   var uid;
-  var randomTweets = ['For just $1 you get a half price download of half of the song. You will be able to listen to it just once.','People tell me my body looks like a melted candle','Come on movie! Make it start!','Byaaaayy','Please, please, win! Meow, meow, meow!','Put. A. Bird. On. It.','A weekend wasted is a weekend well spent','Would you like to super spike your meal?','We have a mean no-no-bring-bag up here on aisle two.','SEEK: See, Every, EVERY, Kind... of spot','We can order that for you. It will take a year to get there.','If you are pregnant, have a soda.','Hear that snap? Hear that clap?','Follow me and I may follow you','Which is the best cafe in Portland? Discuss...','Portland Coffee is for closers!','Lets get this party started!','How about them portland blazers!',"You got school'd, yo",'I love animals','I love my dog',"What's up Portland",'Which is the best cafe in Portland? Discuss...','I dont always tweet, but when I do it is on Tweetaspike'];
+  var randomTweets = ['For just $1 you get a half price download of half of the song. You will be able to listen to it just once.',
+  'People tell me my body looks like a melted candle','Come on movie! Make it start!',
+  'Byaaaayy','Please, please, win! Meow, meow, meow!','Put. A. Bird. On. It.',
+  'A weekend wasted is a weekend well spent','Would you like to super spike your meal?',
+  'We have a mean no-no-bring-bag up here on aisle two.',
+  'SEEK: See, Every, EVERY, Kind... of spot',
+  'We can order that for you. It will take a year to get there.',
+  'If you are pregnant, have a soda.','Hear that snap? Hear that clap?',
+  'Follow me and I may follow you','Which is the best cafe in Portland? Discuss...',
+  'Portland Coffee is for closers!','Lets get this party started!',
+  'How about them portland blazers!',"You got school'd, yo",'I love animals',
+  'I love my dog',"What's up Portland",'Which is the best cafe in Portland? Discuss...',
+  'I dont always tweet, but when I do it is on Tweetaspike'];
 
   for (var i = start; i <= end; i++) {
     uid = Math.floor((Math.random() * 10000) + 1);
