@@ -31,7 +31,7 @@ This application is built using -- Aerospike + Express + Angular + Node -- ASEAN
 
 ## Get Up and Running
 
-### Prerequisite
+### Prerequisites
 
 - Aerospike Server – To install the latest version, [click here](http://www.aerospike.com/download/server/latest). The server should be running and accessible from this app.
 - Node.js – To install a compatible version between v0.10.2 and v0.10.36, visit http://nodejs.org/dist/ (IMP: Aerospike Node.js Client currently does not support Node.js versions v0.11.x and greater)
