@@ -3,22 +3,21 @@
 angular.module('tweetabaseApp')
   .factory('auth', ['$q', '$http', '$rootScope', 'localStorageService', function ($q, $http, $rootScope, localStorageService) {
 
+    var authKey = 'auth';
+    var uidKey = 'uid';
+
     // Public API
 
     var login = function(user,callback) {
       var cb = callback || angular.noop;
       // var deferred = $q.defer();
 
-      // console.log(user.email + '...' + user.password);
       $rootScope.currentUser = null;
-
       $http.post('/api/checkCredentials', {uid: user.email, password: user.password}).success(function(uResponse) {
         // console.log('/api/checkCredentials uResponse: ' + JSON.stringify(uResponse));
         if (uResponse.status === 'Ok'){
           localStorageService.set(uidKey,uResponse.uid);
           localStorageService.set(authKey,uResponse.auth);
-          var authKey = 'auth';
-          var uidKey = 'uid';
           user.uid = uResponse.uid;
           user.auth = uResponse.auth;
           $rootScope.currentUser = user;
@@ -33,8 +32,6 @@ angular.module('tweetabaseApp')
 
     var logout = function(callback) {
       var cb = callback || angular.noop;
-      var authKey = 'auth';
-      var uidKey = 'uid';
       localStorageService.set(uidKey,null);
       localStorageService.set(authKey,null);
       $rootScope.currentUser = null;
