@@ -297,3 +297,16 @@
   color: #c31618;
   text-shadow: -3px -1px 1px rgba(0, 0, 0, 0.35);
 }
+
+.count-header {
+  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.35);
+  text-align: center;
+  padding: 15px 0px 15px 0px;
+  font-size: 80px;
+  color: #60E300;
+  span {
+      display: inline-block;
+      min-width: 100px;
+  }
+}
+
