@@ -82,6 +82,7 @@ Bins:
 *   username - String
 *   password - String
 *   auth - String
+*   tweetCount - Integer
 
 Sample Record:
 ```
@@ -89,7 +90,8 @@ Sample Record:
 { uid: 'dash',
   username: 'dash',
   password: 'dash',
-  auth: 'c18d1b9a-19fb-4b2b-b4d3-560c8af07ef6' }
+  auth: 'c18d1b9a-19fb-4b2b-b4d3-560c8af07ef6',
+  tweetCount: 3 }
 ```
 
 Note: For simplicity, password is stored in plain-text
