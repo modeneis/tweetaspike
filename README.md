@@ -23,8 +23,8 @@ This application is built using -- Aerospike + Express + Angular + Node -- ASEAN
   * Aerospike Node.js Client
 
 ## Other Technologies Used
-  * <a href='https://angularjs.org/' target='_blank'>AngularJS</a>
   * <a href='http://nodejs.org/' target='_blank'>Node.js</a>
+  * <a href='https://angularjs.org/' target='_blank'>AngularJS</a>
   * <a href='http://expressjs.com/' target='_blank'>Express</a>
   * <a href='http://socket.io/' target='_blank'>Socket.io</a>
   * <a href='http://angular-ui.github.io/bootstrap/' target='_blank'>Angular UI</a>
@@ -51,12 +51,13 @@ Note: To easily manage your existing Node.js installations and switch between  v
 
 ### Technical Know-How
 
-Even though this is a pretty lightweight application, I’ve used different technologies to make it decent enough – visually & functionally – and covering all aspects as well as walking through the entire codebase is beyond the scope of this post. So, good understanding and working knowledge of the following technologies is presumed.
+Even though this is a pretty lightweight application, I’ve used different technologies to make it decent enough – ***visually & functionally*** – and covering all aspects as well as walking through the entire codebase is beyond the scope of this README. So, good understanding and working knowledge of the following technologies is presumed.
 
  * Node.js 
  * AngularJS 
- * Socket.io 
  * Express
+ * Socket.io
+ * Angular UI
 
 ### Usage
 
