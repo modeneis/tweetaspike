@@ -154,7 +154,6 @@ function getBatchUsersPosts()  {
     else {
       console.log("getBatchUsersPosts error: ", err);
     }
-    client.close();
   });
 }
 

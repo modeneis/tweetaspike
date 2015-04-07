@@ -10,7 +10,7 @@ This application is built using -- Aerospike + Express + Angular + Node -- ASEAN
 ## Application Features
 
   * Register | Login | Logout
-  * Post &mdash; similar to tweets, only better since there's no character limit :)
+  * Post &mdash; similar to tweets, only cooler since there's no character limit :)
   * Follow &mdash; follow other users
   * Unfollow &mdash; unfollow users you are following
   * Following &mdash; list of users you follow including their posts
