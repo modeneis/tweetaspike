@@ -122,11 +122,11 @@ Note: Key for Tweet record includes tweet counter so you can use Aerospike's Bat
 Key: uid
 
 Bin:
-*    followers - Array of Strings (usernames)
+*    followers - Array of Strings
 
 Sample Record:
 ```
-{ ns: 'test', set: 'followers', key: 'uid:dash:followers’ } 
+{ ns: 'test', set: 'followers', key: 'dash’ } 
 { followers:
    [ 'joe',
      'jane',
@@ -145,7 +145,7 @@ Bin:
 Sample Record:
 
 ```
-{ ns: 'test', set: 'following', key: 'uid:dash:following' } 
+{ ns: 'test', set: 'following', key: 'dash' } 
 { following:
    [ { tweets: [], handle: 'claire' },
      { tweets: [], handle: 'brandon' },
