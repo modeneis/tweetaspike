@@ -1,7 +1,7 @@
 Tweetaspike
 ===========
 
-The purpose of this sample application is to show that Aerospike APIs on top of a key-value store are an effective way to write applications with Aerospike as the only database. To demonstrate, this sample app describes the design and implementation of a twitter-like application. 
+The purpose of this sample application is to show that Aerospike APIs on top of a key-value store are an effective way to write applications with Aerospike as the only database. To demonstrate, this sample app describes the design and implementation of a "twitter-like" application called Tweetaspike.
 
 The code is easy to follow and substantial enough to be a foundation in learning how to leverage Aerospike's technology and it can also be used as a "seed" application that you can expand.
 
@@ -48,6 +48,15 @@ This application is built using -- Aerospike + Express + Angular + Node -- ASEAN
 - Node.js – To install a compatible version between v0.10.2 and v0.10.36, visit http://nodejs.org/dist/ 
 
 Note: To easily manage your existing Node.js installations and switch between  versions, use version manager such as nvm. To install nvm, visit https://www.npmjs.com/package/nvm. Once installed, you may use it to install different versions of Node.js using command nvm install <version> or switch to a different version that you already have installed using command nvm use <version>
+
+### Technical Know-How
+
+Even though this is a pretty lightweight application, I’ve used different technologies to make it decent enough – visually & functionally – and covering all aspects as well as walking through the entire codebase is beyond the scope of this post. So, good understanding and working knowledge of the following technologies is presumed.
+
+ * Node.js 
+ * AngularJS 
+ * Socket.io 
+ * Express
 
 ### Usage
 
