@@ -1,5 +1,4 @@
-/*@import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';*/
-/* line 5, ../../app/styles/main.scss */
+/* line 3, ../../app/styles/main.scss */
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -8,7 +7,7 @@
 }
 
 /* Space out content a bit */
-/* line 13, ../../app/styles/main.scss */
+/* line 11, ../../app/styles/main.scss */
 body {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -18,7 +17,7 @@ body {
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
-/* line 24, ../../app/styles/main.scss */
+/* line 22, ../../app/styles/main.scss */
 .header,
 .marketing,
 .footer {
@@ -28,7 +27,7 @@ body {
 
 /* Custom page header */
 /* Make the masthead heading the same height as the navigation */
-/* line 35, ../../app/styles/main.scss */
+/* line 33, ../../app/styles/main.scss */
 .header h3 {
   margin-top: 0;
   margin-bottom: 0;
@@ -37,48 +36,48 @@ body {
 }
 
 /* Custom page footer */
-/* line 43, ../../app/styles/main.scss */
+/* line 41, ../../app/styles/main.scss */
 .footer {
   padding-top: 19px;
   color: #777;
   border-top: 1px solid #e5e5e5;
 }
 
-/* line 49, ../../app/styles/main.scss */
+/* line 47, ../../app/styles/main.scss */
 .container-narrow > hr {
   margin: 30px 0;
 }
 
 /* Main marketing message and sign up button */
-/* line 54, ../../app/styles/main.scss */
+/* line 52, ../../app/styles/main.scss */
 .jumbotron {
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
 }
 
-/* line 59, ../../app/styles/main.scss */
+/* line 57, ../../app/styles/main.scss */
 .jumbotron .btn {
   font-size: 21px;
   padding: 14px 24px;
 }
 
 /* Supporting marketing content */
-/* line 65, ../../app/styles/main.scss */
+/* line 63, ../../app/styles/main.scss */
 .marketing {
   margin: 40px 0;
 }
 
-/* line 69, ../../app/styles/main.scss */
+/* line 67, ../../app/styles/main.scss */
 .marketing p + h4 {
   margin-top: 28px;
 }
 
-/* line 73, ../../app/styles/main.scss */
+/* line 71, ../../app/styles/main.scss */
 .input-group-btn {
   vertical-align: top;
 }
 
-/* line 77, ../../app/styles/main.scss */
+/* line 75, ../../app/styles/main.scss */
 .nav-lines-btn {
   position: relative;
   margin-top: 2%;
@@ -90,7 +89,7 @@ body {
   outline: none;
 }
 
-/* line 87, ../../app/styles/main.scss */
+/* line 85, ../../app/styles/main.scss */
 #lines:before {
   border-bottom: 10px double black;
   border-top: 0px solid black;
@@ -104,13 +103,13 @@ body {
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
-  /* line 100, ../../app/styles/main.scss */
+  /* line 98, ../../app/styles/main.scss */
   .container {
     max-width: 700px;
   }
 
   /* Remove the padding we set earlier */
-  /* line 107, ../../app/styles/main.scss */
+  /* line 105, ../../app/styles/main.scss */
   .header,
   .marketing,
   .footer {
@@ -119,13 +118,13 @@ body {
   }
 
   /* Space out the masthead */
-  /* line 112, ../../app/styles/main.scss */
+  /* line 110, ../../app/styles/main.scss */
   .header {
     margin-bottom: 30px;
   }
 
   /* Remove the bottom border on the jumbotron for visual effect */
-  /* line 116, ../../app/styles/main.scss */
+  /* line 114, ../../app/styles/main.scss */
   .jumbotron {
     border-bottom: 0;
   }

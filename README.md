@@ -79,6 +79,10 @@ If you see *Connection to Aerospike cluster failed!*, please make sure your inst
 
 If all is well, open web browser and point it to: [http://localhost:9000](http://localhost:9000)
 
+##### Updating Styles
+
+After making changes to [app.scss](https://github.com/aerospike/tweetaspike/blob/master/app/styles/app.scss) or [main.scss](https://github.com/aerospike/tweetaspike/blob/master/app/styles/app.scss), run command **grunt** from the application root folder. This will compile modified .scss files and generate respective .css files and add/replace them in .tmp folder for the application to load.
+
 ## Additional Information
 
 ### Data Models
