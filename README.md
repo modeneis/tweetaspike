@@ -137,6 +137,8 @@ Note: Key for Tweet record includes tweet counter so you can use Aerospike's Bat
 
 ##### Alternate Tweets Data Model
 
+One tweet record per User.
+
 Key: uid 
 
 Bin:
