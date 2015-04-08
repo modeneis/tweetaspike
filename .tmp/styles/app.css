@@ -1,104 +1,37 @@
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/dash\/Apps\/tweetabase\/app\/styles\/app\.scss;
-  }
-
-  line {
-    font-family: \000033;
-  }
-}
-
-.input-group-addon,
-.input-group-btn {
+/* line 3, ../../app/styles/app.scss */
+.input-group-addon, .input-group-btn {
   vertical-align: top;
 }
 
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/dash\/Apps\/tweetabase\/app\/styles\/app\.scss;
-  }
-
-  line {
-    font-family: \000037;
-  }
-}
-
+/* line 7, ../../app/styles/app.scss */
 .jumbotron {
   background-color: #c31618;
   color: #ffffff;
 }
 
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/dash\/Apps\/tweetabase\/app\/styles\/app\.scss;
-  }
-
-  line {
-    font-family: \0000312;
-  }
-}
-
-.nav-pills > li.active > a,
-.nav-pills > li.active > a:hover,
-.nav-pills > li > a:hover,
-.nav-pills > li.active > a:focus {
+/* line 12, ../../app/styles/app.scss */
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li > a:hover, .nav-pills > li.active > a:focus {
   background-color: #ffffff;
   color: #000000;
   border-bottom: 4px solid red;
 }
 
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/dash\/Apps\/tweetabase\/app\/styles\/app\.scss;
-  }
-
-  line {
-    font-family: \0000318;
-  }
-}
-
+/* line 18, ../../app/styles/app.scss */
 .nav-pills > li > a {
   border-radius: 0px;
 }
 
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/dash\/Apps\/tweetabase\/app\/styles\/app\.scss;
-  }
-
-  line {
-    font-family: \0000322;
-  }
-}
-
+/* line 22, ../../app/styles/app.scss */
 .main-content {
   min-height: 650px;
 }
 
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/dash\/Apps\/tweetabase\/app\/styles\/app\.scss;
-  }
-
-  line {
-    font-family: \0000326;
-  }
-}
-
+/* line 26, ../../app/styles/app.scss */
 .text-aerospike {
   color: #c31618;
 }
 
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/dash\/Apps\/tweetabase\/app\/styles\/app\.scss;
-  }
-
-  line {
-    font-family: \0000330;
-  }
-}
-
+/* line 30, ../../app/styles/app.scss */
 .onoffswitch {
   position: relative;
   width: 120px;
@@ -108,30 +41,12 @@
   margin: -5% 0 0 80%;
 }
 
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/dash\/Apps\/tweetabase\/app\/styles\/app\.scss;
-  }
-
-  line {
-    font-family: \0000336;
-  }
-}
-
+/* line 36, ../../app/styles/app.scss */
 .onoffswitch-checkbox {
   display: none;
 }
 
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/dash\/Apps\/tweetabase\/app\/styles\/app\.scss;
-  }
-
-  line {
-    font-family: \0000340;
-  }
-}
-
+/* line 40, ../../app/styles/app.scss */
 .onoffswitch-label {
   display: block;
   overflow: hidden;
@@ -140,35 +55,19 @@
   border-radius: 30px;
 }
 
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/dash\/Apps\/tweetabase\/app\/styles\/app\.scss;
-  }
-
-  line {
-    font-family: \0000345;
-  }
-}
-
+/* line 45, ../../app/styles/app.scss */
 .onoffswitch-inner {
   display: block;
   width: 200%;
   margin-left: -100%;
+  -moz-transition: margin 0.3s ease-in 0s;
+  -webkit-transition: margin 0.3s ease-in 0s;
+  -o-transition: margin 0.3s ease-in 0s;
   transition: margin 0.3s ease-in 0s;
 }
 
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/dash\/Apps\/tweetabase\/app\/styles\/app\.scss;
-  }
-
-  line {
-    font-family: \0000351;
-  }
-}
-
-.onoffswitch-inner:before,
-.onoffswitch-inner:after {
+/* line 51, ../../app/styles/app.scss */
+.onoffswitch-inner:before, .onoffswitch-inner:after {
   display: block;
   float: left;
   width: 50%;
@@ -179,19 +78,11 @@
   color: white;
   font-family: Trebuchet, Arial, sans-serif;
   -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/dash\/Apps\/tweetabase\/app\/styles\/app\.scss;
-  }
-
-  line {
-    font-family: \0000357;
-  }
-}
-
+/* line 57, ../../app/styles/app.scss */
 .onoffswitch-inner:before {
   content: "Alerts - ON";
   padding-left: 10px;
@@ -199,16 +90,7 @@
   color: #FFFFFF;
 }
 
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/dash\/Apps\/tweetabase\/app\/styles\/app\.scss;
-  }
-
-  line {
-    font-family: \0000363;
-  }
-}
-
+/* line 63, ../../app/styles/app.scss */
 .onoffswitch-inner:after {
   content: "Alerts - OFF";
   padding-right: 10px;
@@ -217,16 +99,7 @@
   text-align: right;
 }
 
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/dash\/Apps\/tweetabase\/app\/styles\/app\.scss;
-  }
-
-  line {
-    font-family: \0000370;
-  }
-}
-
+/* line 70, ../../app/styles/app.scss */
 .onoffswitch-switch {
   display: block;
   width: 29px;
@@ -237,76 +110,43 @@
   top: 0;
   bottom: 0;
   right: 95px;
+  -moz-transition: all 0.3s ease-in 0s;
+  -webkit-transition: all 0.3s ease-in 0s;
+  -o-transition: all 0.3s ease-in 0s;
   transition: all 0.3s ease-in 0s;
 }
 
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/dash\/Apps\/tweetabase\/app\/styles\/app\.scss;
-  }
-
-  line {
-    font-family: \0000379;
-  }
-}
-
+/* line 79, ../../app/styles/app.scss */
 .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
   margin-left: 0;
 }
 
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/dash\/Apps\/tweetabase\/app\/styles\/app\.scss;
-  }
-
-  line {
-    font-family: \0000383;
-  }
-}
-
+/* line 83, ../../app/styles/app.scss */
 .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
   right: 0px;
 }
 
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/dash\/Apps\/tweetabase\/app\/styles\/app\.scss;
-  }
-
-  line {
-    font-family: \0000387;
-  }
-}
-
+/* line 87, ../../app/styles/app.scss */
 .admin-panel {
   padding-top: 20px;
 }
-
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/dash\/Apps\/tweetabase\/app\/styles\/app\.scss;
-  }
-
-  line {
-    font-family: \0000389;
-  }
-}
-
+/* line 89, ../../app/styles/app.scss */
 .admin-panel .admin {
   font-size: 60px;
   color: #c31618;
   text-shadow: -3px -1px 1px rgba(0, 0, 0, 0.35);
 }
 
+/* line 96, ../../app/styles/app.scss */
 .count-header {
   text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.35);
   text-align: center;
   padding: 15px 0px 15px 0px;
   font-size: 80px;
   color: #60E300;
-  span {
-      display: inline-block;
-      min-width: 100px;
-  }
 }
-
+/* line 102, ../../app/styles/app.scss */
+.count-header span {
+  display: inline-block;
+  min-width: 100px;
+}
