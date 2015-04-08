@@ -89,6 +89,8 @@ In a different terminal window, browse to the application root folder. Then run 
 
 #### Users
 
+One user record per User.
+
 Key: uid
 
 Bins:
@@ -112,6 +114,8 @@ Note: For simplicity, password is stored in plain-text
 
 #### Tweets
 
+One tweet record per Tweet.
+
 Key: uid:tweetcount 
 
 Bins:
@@ -129,7 +133,24 @@ Sample Record:
   ts: 1427945664001 }
 ```
 
-Note: Key for Tweet record includes tweet counter so you can use Aerospike's Batch operation to retrieve all tweets for a given user. 
+Note: Key for Tweet record includes tweet counter so you can use Aerospike's Batch operation to retrieve all tweets for a given user with one API call. 
+
+##### Alternate Tweets Data Model
+
+Key: uid 
+
+Bin:
+*   tweets - Map
+
+Sample Record:
+
+```
+{ ns: 'test', set: 'tweets', key: 'dash' } 
+{ 1428433280390: 'hello budapest!',
+  1428433295094: 'good morning to you all!' }
+```
+
+Note: tweets Map entries would contain key-value pairs; where key is the timestamp and value is the tweet.
 
 #### Followers
 
