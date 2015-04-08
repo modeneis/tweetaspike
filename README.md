@@ -63,7 +63,7 @@ Even though this is a pretty lightweight application, I’ve used different tech
 
 #### Build
 
-To build the application and resolve dependencies, run command: **npm install**
+To build the application and resolve dependencies, run command **npm install** from the application root folder.
 
 #### Config
 
@@ -71,17 +71,17 @@ In [aerospike_config.js](https://github.com/aerospike/tweetaspike/blob/master/li
 
 #### Run
 
-To run the application, run command: **node server**
+To run the application, run command **node server** from the application root folder.
 
 You should see message **Connection to Aerospike cluster succeeded!**
 
 If you see *Connection to Aerospike cluster failed!*, please make sure your instance of Aerospike Server is running and available. Also confirm that **aerospikeCluster** and **aerospikeClusterPort** are set correctly as described above in the Config section.
 
-If all is well, open web browser and point it to: [http://localhost:9000](http://localhost:9000)
+If all is well, open web browser and point it to: [http://localhost:9000](http://localhost:9000) 
 
-##### Updating Styles
+#### Updating Styles
 
-After making changes to [app.scss](https://github.com/aerospike/tweetaspike/blob/master/app/styles/app.scss) or [main.scss](https://github.com/aerospike/tweetaspike/blob/master/app/styles/app.scss), run command **grunt** from the application root folder. This will compile modified .scss files and generate respective .css files and add/replace them in .tmp folder for the application to load.
+In a different terminal window, browse to the application root folder. Then run command **grunt** &mdash; and keep it running while you are updating [app.scss](https://github.com/aerospike/tweetaspike/blob/master/app/styles/app.scss) or [main.scss](https://github.com/aerospike/tweetaspike/blob/master/app/styles/app.scss). This will compile your updates in .scss files and generate respective .css files in real-time.
 
 ## Additional Information
 
