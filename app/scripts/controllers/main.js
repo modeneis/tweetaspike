@@ -81,7 +81,7 @@ angular.module('tweetabaseApp')
       });
 		};
 
-		//NOTE: Displaying new tweet by 'pre-appending' it to existing tweets on the page
+		//NOTE: Displaying new tweet by 'prepending' it to existing tweets on the page
 		$scope.$on('socket:broadcast', function (event,data) {
 			// console.log(event.name);
 			if ((data.realTweet || $scope.alertStatus) && $scope.uid != data.uid)	{
@@ -116,7 +116,7 @@ angular.module('tweetabaseApp')
 		      //see server.js for the listener		      
 		      socket.emit('tweet',{uid: randomFollowingUID, tweet: randomTweet, realTweet: false});
 				}
-			}, 10000);
+			}, 5000);
 		};
 
   }]);
