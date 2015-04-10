@@ -5,12 +5,12 @@ The purpose of this sample application is to show that Aerospike APIs on top of 
 
 The code is easy to follow and substantial enough to be a foundation in learning how to leverage Aerospike's technology and it can also be used as a "seed" application that you can expand.
 
-This application is built using -- Aerospike + Express + Angular + Node -- ASEAN (/a-shawn/) Stack.
+This application is built using -- Aerospike + Express + Angular + Node -- ASEAN (/a-shawn/) Stack :)
 
-## Application Features
+## Application Features Overview
 
   * Register | Login | Logout
-  * Post &mdash; similar to tweets, only cooler since there's no character limit :)
+  * Tweet &mdash; post new tweets
   * Follow &mdash; follow other users
   * Unfollow &mdash; unfollow users you are following
   * Following &mdash; list of users you follow including their posts
