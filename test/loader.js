@@ -19,8 +19,8 @@ client.connect(function (response) {
   if ( response.code === 0) {
     // handle success
     console.log("\nConnection to Aerospike cluster succeeded!\n");
-    createIndexOnUsername();
-    createIndexOnTweetcount();
+    // createIndexOnUsername();
+    // createIndexOnTweetcount();
   }
   else {
     // handle failure
@@ -231,10 +231,10 @@ function scanAllTweets() {
 
 function scanAllTweetsWithUDF() {
   //register UDF
-  client.udfRegister('udf/updatePassword.lua', function(err) {
+  client.udfRegister('../udf/updatePassword.lua', function(err) {
     if ( err.code === aerospike.status.AEROSPIKE_OK ) {
       // udf registered  
-      var statement = {concurrent: true, UDF: {module:'updatePassword', funcname: 'update', args: ['pwd']}};
+      var statement = {concurrent: true, UDF: {module:'updatePassword', funcname: 'update', args: ['pwdpwd']}};
       var query = client.query(aerospikeDBParams.dbName,aerospikeDBParams.usersTable, statement);
       var stream = query.execute();
       stream.on('error', function(err)  {
@@ -318,35 +318,38 @@ function getUsersByTweetCount(min,max)  {
 
 function aggregateTweetsByRegion(min,max)  {
   //register UDF
-  client.udfRegister('udf/aggregateTweets.lua', function(err) {
+  client.udfRegister('../udf/aggregateTweets.lua', function(err) {
     if ( err.code === aerospike.status.AEROSPIKE_OK ) {
       // udf registered  
       // console.error('aggregateTweets registeration complete!');
       var statement = {filters:[aerospike.filter.range('tweetCount', min, max)], aggregationUDF: {module: 'aggregateTweets', funcname: 'sum'}, select: ['region','tweetCount']};
-      var query = client.query('test', 'users', statement);
+      var query = client.query(aerospikeDBParams.dbName,aerospikeDBParams.usersTable, statement);
       var stream = query.execute();
       stream.on('data', function(result)  {
         console.log('result: ', result);
       });
       stream.on('error', function(err)  {
-        console.log('aggregateTweetsByRegion Error: ',err);
+        console.log('aggregateTweets Error:\n',err);
       });
       stream.on('end', function()  {
-        console.log('aggregateTweetsByRegion: ', '!done!');
+        console.log('aggregateTweets: ', '!done!');
       });
     } else {
       // An error occurred
       console.error('aggregateTweets registeration error: ', err);
     }
   });
+  //NOTE: to test via aql -- AGGREGATE aggregateTweets.sum() ON test.users WHERE tweetCount BETWEEN 4 and 10
 }
 
+
+/////////////////// Command Line Options 
 if (f === 'putusers') { 
   seedUsers();
 } else if (f === 'puttweets')  {
   seedUsersTweets();
 } else if (f === 'agg')  {
-  aggregateTweetsByRegion(5,10);
+  aggregateTweetsByRegion(4,8);
 } else if (f === 'gettweets')  {
   getUsersByTweetCount(1,10);
 } else if (f === 'alltweets')  {
