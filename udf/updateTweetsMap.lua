@@ -1,4 +1,4 @@
-function updateList(userTweetRecord,tweet,ts)
+function updateMap(userTweetRecord,tweet,ts)
 	-- extract tweets map from userTweetRecord and store it in local variable
 	local userTweets = userTweetRecord.tweets
 	-- add new tweet 
