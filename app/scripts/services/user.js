@@ -52,9 +52,23 @@ angular.module('tweetabaseApp')
       // return deferred.promise;
     };
 
+    var lookupUsername = function(user, callback) {
+      var cb = callback || angular.noop;
+      // var deferred = $q.defer();
+      $http.post('/api/startsWith', {searchString: user.searchString}).success(function(response) {
+        if (response.status === 'Ok'){
+          return cb({status : 'Ok', users: response.users});
+        } else {
+          return cb({message : 'Invalid handle. Please try another one!'});
+        }
+      });
+      // return deferred.promise;
+    };
+
     return {
       create: create,
-      checkUsername: checkUsername
+      checkUsername: checkUsername,
+      lookupUsername: lookupUsername
     };
 
   }]);

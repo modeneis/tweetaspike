@@ -10,6 +10,7 @@ angular.module('tweetabaseApp')
     $scope.message = null;
     $scope.oneAtATime = true;
     $scope.toUnfollow = null;
+    $scope.matchingUsersList = [];
 
 		$scope.retrieveFollowing = function	() {
 			$scope.myFollowingList = [];
@@ -129,6 +130,28 @@ angular.module('tweetabaseApp')
 
 			}
 		};
+
+		$scope.search = function () {
+			if ($scope.user.email === "" || $scope.user.email == null || $scope.user.email.length < 4)	{
+				return;
+			}
+
+			user.lookupUsername({
+				searchString: $scope.user.email
+			},	function(response)	{
+        // console.log(response);
+        if (response && response.status === 'Ok')	{
+					$scope.matchingUsersList = response.users;
+					// console.log($scope.matchingUsersList);
+        }
+			});			
+		};
+
+		$scope.selectUser = function (index) {
+			$scope.user.email = $scope.matchingUsersList[index].split(":")[0];
+			$scope.matchingUsersList = [];
+		};
+
 	}]);
 
 angular.module('tweetabaseApp')

@@ -150,3 +150,34 @@
   display: inline-block;
   min-width: 100px;
 }
+
+/* line 108, ../../app/styles/app.scss */
+.typeahead {
+  color: #60E300;
+  font-size: 20px;
+  list-style-type: none;
+  padding: 0px;
+  margin: 20px;
+}
+
+/* line 116, ../../app/styles/app.scss */
+.typeahead > li {
+  text-decoration: none;
+  color: #000;
+  display: block;
+  font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+  border-bottom: 1px solid #ccc;
+  margin: 20px;
+  cursor: pointer;
+  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+  transition: font-size 0.3s ease, background-color 0.3s ease;
+}
+
+/* line 132, ../../app/styles/app.scss */
+.typeahead > li:hover {
+  font-size: 30px;
+  background: #f6f6f6;
+}
