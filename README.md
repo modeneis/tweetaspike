@@ -1,7 +1,7 @@
 Tweetaspike
 ===========
 
-The purpose of this sample application is to show that Aerospike APIs on top of a key-value store are an effective way to write applications with Aerospike as the only database. To demonstrate, this sample app describes the design and implementation of a "twitter-like" application called Tweetaspike.
+The purpose of this sample application is to show that Aerospike key-value store is an effective way to write applications with Aerospike as the only database. To demonstrate, this sample app describes the design and implementation of a "twitter-like" application called Tweetaspike.
 
 The code is easy to follow and substantial enough to be a foundation in learning how to leverage Aerospike's technology and it can also be used as a "seed" application that you can expand.
 
